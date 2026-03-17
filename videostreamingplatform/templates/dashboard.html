@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+
+<style>
+body{
+background:#111;
+color:white;
+font-family:Arial;
+}
+
+.card{
+background:#222;
+padding:20px;
+margin:20px;
+border-radius:10px;
+}
+
+a{
+color:#ff4444;
+text-decoration:none;
+}
+
+button{
+padding:8px 15px;
+margin-top:10px;
+background:#ff4444;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Video Dashboard</h1>
+
+<a href="/upload">Upload Video</a>
+
+<hr>
+
+{% for video in videos %}
+
+<div class="card">
+
+<h3>{{ video[1] }}</h3>
+
+<a href="/watch/{{ video[0] }}">Watch Video</a>
+
+<br><br>
+
+<a href="/delete/{{ video[0] }}">
+<button>Delete Video</button>
+</a>
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>
